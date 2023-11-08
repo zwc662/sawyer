@@ -1,0 +1,37 @@
+version: '2'
+services:
+  workspace:
+    image: zwc662/ros_noetic_sawyer:latest
+    #build:
+    #  context: /home/zwc662/Workspace/ros_noetic
+    #  dockerfile: Dockerfile
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]     
+    stdin_open: true
+    tty: true
+    networks:
+      - workspace
+    volumes:
+      - workspace:/workspace
+    ports:
+      - "8181:8181"
+  novnc:  
+    image: theasp/novnc:latest
+    environment:
+      # Adjust to your screen size
+      - DISPLAY_WITH=3000
+      - DISPLAY_HEIGHT=1800
+      - RUN_XTERM=no
+    ports:
+      - "8080:8080"
+    networks:
+      - workspace
+networks:
+  workspace:
+volumes:
+  workspace:

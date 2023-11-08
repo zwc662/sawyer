@@ -1,0 +1,594 @@
+[
+    {
+        "Id": "cedc9fe36d9e369cb6e8abf8a3e4f959d2776055662a1edcfe387a211ffba576",
+        "Created": "2023-11-08T07:24:48.013617762Z",
+        "Path": "/opt/nvidia/nvidia_entrypoint.sh",
+        "Args": [
+            "/bin/bash"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 12466,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2023-11-08T07:24:51.176963127Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:e020ef0f108124a87c7e5e12933ff75a5a71ca9abcc002a918996b3da80c07da",
+        "ResolvConfPath": "/var/lib/docker/containers/cedc9fe36d9e369cb6e8abf8a3e4f959d2776055662a1edcfe387a211ffba576/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/cedc9fe36d9e369cb6e8abf8a3e4f959d2776055662a1edcfe387a211ffba576/hostname",
+        "HostsPath": "/var/lib/docker/containers/cedc9fe36d9e369cb6e8abf8a3e4f959d2776055662a1edcfe387a211ffba576/hosts",
+        "LogPath": "/var/lib/docker/containers/cedc9fe36d9e369cb6e8abf8a3e4f959d2776055662a1edcfe387a211ffba576/cedc9fe36d9e369cb6e8abf8a3e4f959d2776055662a1edcfe387a211ffba576-json.log",
+        "Name": "/sawyer-workspace-1",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "sawyer_workspace",
+            "PortBindings": {
+                "8181/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "8181"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": [
+                {
+                    "Driver": "nvidia",
+                    "Count": 1,
+                    "DeviceIDs": null,
+                    "Capabilities": [
+                        [
+                            "gpu"
+                        ]
+                    ],
+                    "Options": null
+                }
+            ],
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "Mounts": [
+                {
+                    "Type": "volume",
+                    "Source": "sawyer_workspace",
+                    "Target": "/workspace",
+                    "VolumeOptions": {}
+                }
+            ],
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/1180776ca710610e479ea387601d86d4e9eeddfc71f3320424cde1f8dfe8fce1-init/diff:/var/lib/docker/overlay2/191fa95e60c4b8a09af6c7d1cd2c0d4503ccc04cbed8ba4ef7993a1c9b6013f4/diff:/var/lib/docker/overlay2/2b2ce9a97fd748fa10437d371ece03f6e1439ea6cdb80c8e9998c6fbca40d3ce/diff:/var/lib/docker/overlay2/5ub7qpsh20vsspv4ri6frcv7k/diff:/var/lib/docker/overlay2/t979rgeqncpr76vttjet10nre/diff:/var/lib/docker/overlay2/tpb76utrg4a11he4fk73zsh5h/diff:/var/lib/docker/overlay2/blu3l5ov6i2wlcdwqzlphwtii/diff:/var/lib/docker/overlay2/nz96g84wx23d357elc12d5bow/diff:/var/lib/docker/overlay2/szwr84c22rlzi14wvaage9ieg/diff:/var/lib/docker/overlay2/kizs25744yodq0hqt5vr6f1xz/diff:/var/lib/docker/overlay2/6419f2562429f038f1c8f75a87397f1c8ab58131a192fe54150812356087a8d6/diff:/var/lib/docker/overlay2/f6bc970dfc87a865cacc9e646c61a845d3847c85c050033d78faca20c4102c61/diff:/var/lib/docker/overlay2/57a10b382a32f21edd88ffcdcae90e307399719846a32f9d42802d737b87da8e/diff:/var/lib/docker/overlay2/bdadac0ff7812d101f465943f46bdaafcad10f945c10fc5c6db39aa73364dae6/diff:/var/lib/docker/overlay2/68cb62e817607413a2fc7a5a6ec94410f1b250d15be14fd49363062e5ec47e98/diff:/var/lib/docker/overlay2/7a71e826c09ddfb2887ca151f00838ced35104bc097639939c75df271f0f991b/diff:/var/lib/docker/overlay2/f11400112b646072fd7436d7c64ee8fc106ad5cdbd550921b467e7a82d3d8ea2/diff:/var/lib/docker/overlay2/91ed46487bdfe5153f7814325cb2dec9c833bfdd7ac13a0884a13e6f6c5d6a4f/diff:/var/lib/docker/overlay2/82f744d6874046b4137176ba363ae18555e5b0fa0b7da9e030d2cbda86712ac6/diff:/var/lib/docker/overlay2/138bbeaf7de7a7d078991f7141c6bf223d6ce4b0dde55cfd2a0c2c27604f4899/diff",
+                "MergedDir": "/var/lib/docker/overlay2/1180776ca710610e479ea387601d86d4e9eeddfc71f3320424cde1f8dfe8fce1/merged",
+                "UpperDir": "/var/lib/docker/overlay2/1180776ca710610e479ea387601d86d4e9eeddfc71f3320424cde1f8dfe8fce1/diff",
+                "WorkDir": "/var/lib/docker/overlay2/1180776ca710610e479ea387601d86d4e9eeddfc71f3320424cde1f8dfe8fce1/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "sawyer_workspace",
+                "Source": "/var/lib/docker/volumes/sawyer_workspace/_data",
+                "Destination": "/workspace",
+                "Driver": "local",
+                "Mode": "z",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "cedc9fe36d9e",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "8181/tcp": {}
+            },
+            "Tty": true,
+            "OpenStdin": true,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NVARCH=x86_64",
+                "NVIDIA_REQUIRE_CUDA=cuda>=11.2 brand=tesla,driver>=418,driver<419 brand=tesla,driver>=450,driver<451",
+                "NV_CUDA_CUDART_VERSION=11.2.152-1",
+                "NV_CUDA_COMPAT_PACKAGE=cuda-compat-11-2",
+                "CUDA_VERSION=11.2.2",
+                "LD_LIBRARY_PATH=/usr/local/nvidia/lib:/usr/local/nvidia/lib64",
+                "NVIDIA_VISIBLE_DEVICES=all",
+                "NVIDIA_DRIVER_CAPABILITIES=compute,utility",
+                "NV_CUDA_LIB_VERSION=11.2.2-1",
+                "NV_NVTX_VERSION=11.2.152-1",
+                "NV_LIBNPP_VERSION=11.3.2.152-1",
+                "NV_LIBNPP_PACKAGE=libnpp-11-2=11.3.2.152-1",
+                "NV_LIBCUSPARSE_VERSION=11.4.1.1152-1",
+                "NV_LIBCUBLAS_PACKAGE_NAME=libcublas-11-2",
+                "NV_LIBCUBLAS_VERSION=11.4.1.1043-1",
+                "NV_LIBCUBLAS_PACKAGE=libcublas-11-2=11.4.1.1043-1",
+                "NV_LIBNCCL_PACKAGE_NAME=libnccl2",
+                "NV_LIBNCCL_PACKAGE_VERSION=2.8.4-1",
+                "NCCL_VERSION=2.8.4-1",
+                "NV_LIBNCCL_PACKAGE=libnccl2=2.8.4-1+cuda11.2",
+                "NVIDIA_PRODUCT_NAME=CUDA",
+                "NV_CUDNN_VERSION=8.1.1.33",
+                "NV_CUDNN_PACKAGE_NAME=libcudnn8",
+                "NV_CUDNN_PACKAGE=libcudnn8=8.1.1.33-1+cuda11.2",
+                "DISPLAY=novnc:0.0"
+            ],
+            "Cmd": [
+                "/bin/bash"
+            ],
+            "Image": "zwc662/ros_noetic_sawyer:latest",
+            "Volumes": null,
+            "WorkingDir": "/workspace",
+            "Entrypoint": [
+                "/opt/nvidia/nvidia_entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "c9a09aca19f07568d3a0d09074c846c64f23b8580fe18ee6bc8d2b5c19dc0fd6",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:e020ef0f108124a87c7e5e12933ff75a5a71ca9abcc002a918996b3da80c07da",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "sawyer",
+                "com.docker.compose.project.config_files": "/home/zwc662/Workspace/sawyer/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/home/zwc662/Workspace/sawyer",
+                "com.docker.compose.replace": "2cfd7fc33caba443e389eaa25374a5390edb26294756de7a22ddfb09cd2b3a64",
+                "com.docker.compose.service": "workspace",
+                "com.docker.compose.version": "2.21.0",
+                "com.nvidia.cudnn.version": "8.1.1.33",
+                "maintainer": "NVIDIA CORPORATION <cudatools@nvidia.com>",
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "20.04"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "f06b55cb238e41d04dfb896ceb6b1f6fb358591327dfbd1a08c296dff064fc61",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "8181/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "8181"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "8181"
+                    }
+                ]
+            },
+            "SandboxKey": "/var/run/docker/netns/f06b55cb238e",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "sawyer_workspace": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "sawyer-workspace-1",
+                        "workspace",
+                        "cedc9fe36d9e"
+                    ],
+                    "NetworkID": "a427d4e17596bbcbb7468e8242b1c918f2a95d30af886cbe74b28c65cbed977b",
+                    "EndpointID": "7ed3048edfe760050ffc7c53d2cfeeb78725ad117e2cc4f403026f75d34220dd",
+                    "Gateway": "172.26.0.1",
+                    "IPAddress": "172.26.0.3",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:1a:00:03",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
+[
+    {
+        "Id": "8ed5b51d4f000144e43752dc73651428e20702ccd951560f2b7f9bcd99058230",
+        "Created": "2023-11-08T07:33:43.139214555Z",
+        "Path": "/opt/nvidia/nvidia_entrypoint.sh",
+        "Args": [
+            "/bin/bash"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 13391,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2023-11-08T07:33:46.201805213Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:e020ef0f108124a87c7e5e12933ff75a5a71ca9abcc002a918996b3da80c07da",
+        "ResolvConfPath": "/var/lib/docker/containers/8ed5b51d4f000144e43752dc73651428e20702ccd951560f2b7f9bcd99058230/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/8ed5b51d4f000144e43752dc73651428e20702ccd951560f2b7f9bcd99058230/hostname",
+        "HostsPath": "/var/lib/docker/containers/8ed5b51d4f000144e43752dc73651428e20702ccd951560f2b7f9bcd99058230/hosts",
+        "LogPath": "/var/lib/docker/containers/8ed5b51d4f000144e43752dc73651428e20702ccd951560f2b7f9bcd99058230/8ed5b51d4f000144e43752dc73651428e20702ccd951560f2b7f9bcd99058230-json.log",
+        "Name": "/sawyer-workspace-1",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": [
+            "a4393a3ff672f32727b7b81e363cd703fd8207699a71534cd9ee8efa77868803"
+        ],
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "sawyer_workspace",
+            "PortBindings": {
+                "8181/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "8181"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": [
+                {
+                    "Driver": "nvidia",
+                    "Count": 1,
+                    "DeviceIDs": null,
+                    "Capabilities": [
+                        [
+                            "gpu"
+                        ]
+                    ],
+                    "Options": null
+                }
+            ],
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "Mounts": [
+                {
+                    "Type": "volume",
+                    "Source": "sawyer_workspace",
+                    "Target": "/workspace",
+                    "VolumeOptions": {}
+                }
+            ],
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/ad1bab518b5769569405513c351d11023d6dc24e6a44941d9b8b4a3f155dcb8c-init/diff:/var/lib/docker/overlay2/191fa95e60c4b8a09af6c7d1cd2c0d4503ccc04cbed8ba4ef7993a1c9b6013f4/diff:/var/lib/docker/overlay2/2b2ce9a97fd748fa10437d371ece03f6e1439ea6cdb80c8e9998c6fbca40d3ce/diff:/var/lib/docker/overlay2/5ub7qpsh20vsspv4ri6frcv7k/diff:/var/lib/docker/overlay2/t979rgeqncpr76vttjet10nre/diff:/var/lib/docker/overlay2/tpb76utrg4a11he4fk73zsh5h/diff:/var/lib/docker/overlay2/blu3l5ov6i2wlcdwqzlphwtii/diff:/var/lib/docker/overlay2/nz96g84wx23d357elc12d5bow/diff:/var/lib/docker/overlay2/szwr84c22rlzi14wvaage9ieg/diff:/var/lib/docker/overlay2/kizs25744yodq0hqt5vr6f1xz/diff:/var/lib/docker/overlay2/6419f2562429f038f1c8f75a87397f1c8ab58131a192fe54150812356087a8d6/diff:/var/lib/docker/overlay2/f6bc970dfc87a865cacc9e646c61a845d3847c85c050033d78faca20c4102c61/diff:/var/lib/docker/overlay2/57a10b382a32f21edd88ffcdcae90e307399719846a32f9d42802d737b87da8e/diff:/var/lib/docker/overlay2/bdadac0ff7812d101f465943f46bdaafcad10f945c10fc5c6db39aa73364dae6/diff:/var/lib/docker/overlay2/68cb62e817607413a2fc7a5a6ec94410f1b250d15be14fd49363062e5ec47e98/diff:/var/lib/docker/overlay2/7a71e826c09ddfb2887ca151f00838ced35104bc097639939c75df271f0f991b/diff:/var/lib/docker/overlay2/f11400112b646072fd7436d7c64ee8fc106ad5cdbd550921b467e7a82d3d8ea2/diff:/var/lib/docker/overlay2/91ed46487bdfe5153f7814325cb2dec9c833bfdd7ac13a0884a13e6f6c5d6a4f/diff:/var/lib/docker/overlay2/82f744d6874046b4137176ba363ae18555e5b0fa0b7da9e030d2cbda86712ac6/diff:/var/lib/docker/overlay2/138bbeaf7de7a7d078991f7141c6bf223d6ce4b0dde55cfd2a0c2c27604f4899/diff",
+                "MergedDir": "/var/lib/docker/overlay2/ad1bab518b5769569405513c351d11023d6dc24e6a44941d9b8b4a3f155dcb8c/merged",
+                "UpperDir": "/var/lib/docker/overlay2/ad1bab518b5769569405513c351d11023d6dc24e6a44941d9b8b4a3f155dcb8c/diff",
+                "WorkDir": "/var/lib/docker/overlay2/ad1bab518b5769569405513c351d11023d6dc24e6a44941d9b8b4a3f155dcb8c/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "sawyer_workspace",
+                "Source": "/var/lib/docker/volumes/sawyer_workspace/_data",
+                "Destination": "/workspace",
+                "Driver": "local",
+                "Mode": "z",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "8ed5b51d4f00",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "8181/tcp": {}
+            },
+            "Tty": true,
+            "OpenStdin": true,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NVARCH=x86_64",
+                "NVIDIA_REQUIRE_CUDA=cuda>=11.2 brand=tesla,driver>=418,driver<419 brand=tesla,driver>=450,driver<451",
+                "NV_CUDA_CUDART_VERSION=11.2.152-1",
+                "NV_CUDA_COMPAT_PACKAGE=cuda-compat-11-2",
+                "CUDA_VERSION=11.2.2",
+                "LD_LIBRARY_PATH=/usr/local/nvidia/lib:/usr/local/nvidia/lib64",
+                "NVIDIA_VISIBLE_DEVICES=all",
+                "NVIDIA_DRIVER_CAPABILITIES=compute,utility",
+                "NV_CUDA_LIB_VERSION=11.2.2-1",
+                "NV_NVTX_VERSION=11.2.152-1",
+                "NV_LIBNPP_VERSION=11.3.2.152-1",
+                "NV_LIBNPP_PACKAGE=libnpp-11-2=11.3.2.152-1",
+                "NV_LIBCUSPARSE_VERSION=11.4.1.1152-1",
+                "NV_LIBCUBLAS_PACKAGE_NAME=libcublas-11-2",
+                "NV_LIBCUBLAS_VERSION=11.4.1.1043-1",
+                "NV_LIBCUBLAS_PACKAGE=libcublas-11-2=11.4.1.1043-1",
+                "NV_LIBNCCL_PACKAGE_NAME=libnccl2",
+                "NV_LIBNCCL_PACKAGE_VERSION=2.8.4-1",
+                "NCCL_VERSION=2.8.4-1",
+                "NV_LIBNCCL_PACKAGE=libnccl2=2.8.4-1+cuda11.2",
+                "NVIDIA_PRODUCT_NAME=CUDA",
+                "NV_CUDNN_VERSION=8.1.1.33",
+                "NV_CUDNN_PACKAGE_NAME=libcudnn8",
+                "NV_CUDNN_PACKAGE=libcudnn8=8.1.1.33-1+cuda11.2",
+                "DISPLAY=novnc:0.0"
+            ],
+            "Cmd": [
+                "/bin/bash"
+            ],
+            "Image": "zwc662/ros_noetic_sawyer:latest",
+            "Volumes": null,
+            "WorkingDir": "/workspace",
+            "Entrypoint": [
+                "/opt/nvidia/nvidia_entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "c9a09aca19f07568d3a0d09074c846c64f23b8580fe18ee6bc8d2b5c19dc0fd6",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:e020ef0f108124a87c7e5e12933ff75a5a71ca9abcc002a918996b3da80c07da",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "sawyer",
+                "com.docker.compose.project.config_files": "/home/zwc662/Workspace/sawyer/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/home/zwc662/Workspace/sawyer",
+                "com.docker.compose.replace": "e784fa9a93adf20aa90bf20eaf00111b6ca78c9a8fd087eda8a7510c6acd1d45",
+                "com.docker.compose.service": "workspace",
+                "com.docker.compose.version": "2.21.0",
+                "com.nvidia.cudnn.version": "8.1.1.33",
+                "maintainer": "NVIDIA CORPORATION <cudatools@nvidia.com>",
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "20.04"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "8b89a0002c60a3476c02af1d4bae0c8b624e93439ec6093b811e07fab34f3ee3",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "8181/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "8181"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "8181"
+                    }
+                ]
+            },
+            "SandboxKey": "/var/run/docker/netns/8b89a0002c60",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "sawyer_workspace": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "sawyer-workspace-1",
+                        "workspace",
+                        "8ed5b51d4f00"
+                    ],
+                    "NetworkID": "a427d4e17596bbcbb7468e8242b1c918f2a95d30af886cbe74b28c65cbed977b",
+                    "EndpointID": "0c3b847eefbf3f251b1e9d8223db3a5471f8f34ae95924cd46cbea9bea70f0ac",
+                    "Gateway": "172.26.0.1",
+                    "IPAddress": "172.26.0.3",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:1a:00:03",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]

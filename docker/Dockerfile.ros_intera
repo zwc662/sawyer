@@ -1,0 +1,47 @@
+ARG PARENT_IMAGE=ubuntu:20.04
+FROM $PARENT_IMAGE
+
+# Install ROS Kinetic and Intera SDK dependencies. Instructions obtained from:
+# http://sdk.rethinkrobotics.com/intera/Workstation_Setup
+RUN sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+Generic
+
+RUN sudo apt install curl # if you haven't already installed curl
+
+RUN curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+
+RUN sudo apt -qy update && DEBIAN_FRONTEND=noninteractive apt -qy install ros-noetic-desktop-full
+
+RUN \
+  sudo apt -qy update && \
+  DEBIAN_FRONTEND=noninteractive apt -qy install \ 
+    git-core \
+    python3-wstool \
+    python3-vcstools \
+    python3-rosdep \
+    ros-noetic-control-msgs \
+    ros-noetic-joystick-drivers \
+    ros-noetic-xacro \
+    ros-noetic-tf2-ros \
+    ros-noetic-rviz \
+    ros-noetic-cv-bridge \
+    ros-noetic-actionlib \
+    ros-noetic-actionlib-msgs \
+    ros-noetic-dynamic-reconfigure \
+    ros-noetic-trajectory-msgs \
+    ros-noetic-rospy-message-converter && \
+  sudo apt-get clean && \
+  pip install argparse && \
+  rm -rf /var/lib/apt/list/*
+
+
+RUN sudo rosdep init
+RUN rosdep update
+
+RUN mkdir -p /root/ros_ws/src
+
+RUN ["/bin/bash", "-c", \
+  "source /opt/ros/kinetic/setup.bash && \
+  cd /root/ros_ws && \
+  catkin_make"]
+

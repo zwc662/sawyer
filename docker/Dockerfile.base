@@ -1,0 +1,19 @@
+# Install NVIDIA/OpenGL image. For more information see:
+# https://hub.docker.com/r/nvidia/opengl/
+#FROM nvidia/opengl:1.0-glvnd-runtime-ubuntu16.04
+FROM ubuntu:20.04
+#ENV NVIDIA_DRIVER_CAPABILITIES ${NVIDIA_DRIVER_CAPABILITIES},display
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        mesa-utils && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install necessary packages, including tmux
+RUN apt-get update && apt-get install -y tmux git wget vim sudo make build-essential lsb-release && apt-get clean all
+
+
+RUN wget https://repo.anaconda.com/archive/Anaconda3-2023.03-Linux-x86_64.sh
+RUN export CONDA_PREFIX=$HOME/anaconda3/
+RUN export PATH=$PATH:$CONDA_PREFIX/bin/
+
+

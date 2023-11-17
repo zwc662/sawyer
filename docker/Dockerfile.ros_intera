@@ -4,7 +4,6 @@ FROM $PARENT_IMAGE
 # Install ROS Kinetic and Intera SDK dependencies. Instructions obtained from:
 # http://sdk.rethinkrobotics.com/intera/Workstation_Setup
 RUN sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-Generic
 
 RUN sudo apt install curl # if you haven't already installed curl
 

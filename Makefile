@@ -13,11 +13,11 @@ ifneq (":", $(SAWYER_NET))
 	ADD_HOST=--add-host=$(SAWYER_NET)
 endif
 
-build-sawyer-robot: docker/docker-compose-robot.yml docker/get_intera.sh
+build-sawyer-robot: docker-compose.yml docker/get_intera.sh
 	docker/get_intera.sh
-	docker-compose -f docker/docker-compose-robot.yml build
+	docker compose up --build
 
-run-nvidia-sawyer-robot: build-nvidia-sawyer-robot
+run-sawyer-robot: build-sawyer-robot
 ifeq (,$(ADD_HOST))
 	$(error Set the environment variables SAWYER_HOST and SAWYER_IP)
 endif
@@ -26,11 +26,10 @@ endif
 		--init \
 		-t \
 		--rm \
-		--runtime=nvidia \
 		-v /tmp/.X11-unix:/tmp/.X11-unix \
 		-e DISPLAY="${DISPLAY}" \
 		-e QT_X11_NO_MITSHM=1 \
 		--net="host" \
 		$(ADD_HOST) \
 		--name "sawyer-robot" \
-		gym-sawyer/nvidia-sawyer-robot
+		gym-sawyer/sawyer-robot

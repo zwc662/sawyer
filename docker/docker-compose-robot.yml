@@ -24,4 +24,4 @@ services:
       context: ./sawyer-robot
       args:
         - PARENT_IMAGE=gym-sawyer/ros-noetic-intera-moveit
-    image: gym-sawyer/ros-noetic-sawyer-robot
+    image: gym-sawyer/sawyer-robot

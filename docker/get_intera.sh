@@ -1,5 +1,6 @@
 #!/bin/bash
 export ROS_HOSTNAME=021802CP00071
+export ros_hostname=021802CP00071
 export ROS_IP=192.168.0.103
 export WORKSTATION_IP=192.168.0.101
 

@@ -15,21 +15,16 @@ endif
 
 build-sawyer-robot: docker-compose.yml docker/get_intera.sh
 	docker/get_intera.sh
-	docker compose up --build
+	sudo docker-compose build
 
 run-sawyer-robot: build-sawyer-robot
 ifeq (,$(ADD_HOST))
 	$(error Set the environment variables SAWYER_HOST and SAWYER_IP)
 endif
 	xhost +local:docker
-	docker run \
+	sudo docker run \
 		--init \
-		-t \
 		--rm \
-		-v /tmp/.X11-unix:/tmp/.X11-unix \
-		-e DISPLAY="${DISPLAY}" \
-		-e QT_X11_NO_MITSHM=1 \
-		--net="host" \
-		$(ADD_HOST) \
 		--name "sawyer-robot" \
+		-i
 		gym-sawyer/sawyer-robot

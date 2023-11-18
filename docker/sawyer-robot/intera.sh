@@ -19,11 +19,12 @@ unset your_hostname
 # will be overwritten by any variables set here.
 
 # Specify Robot's hostname
-robot_hostname="robot_hostname.local"
-
+robot_hostname="021802CP00071.local"
+ROS_IP="192.168.0.103"
 # Set *Either* your computers ip address or hostname. Please note if using
 # your_hostname that this must be resolvable to the Robot.
-your_ip="192.168.XXX.XXX"
+your_ip="192.168.0.102"
+
 #your_hostname="my_computer.local"
 
 # Specify ROS distribution (e.g. indigo, hydro, etc.)

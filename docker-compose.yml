@@ -12,6 +12,8 @@ services:
       args:
         - PARENT_IMAGE=sawyer/ros-noetic-base
     image: sawyer/ros-noetic-intera
+    depends_on:
+      - ros-noetic-base
   ros-noetic-intera-moveit:
     build:
       context: ./docker
@@ -19,9 +21,13 @@ services:
       args:
         - PARENT_IMAGE=sawyer/ros-noetic-intera
     image: sawyer/ros-noetic-intera-moveit
+    depends_on:
+      - ros-noetic-intera
   sawyer-robot:
     build:
       context: ./docker/sawyer-robot
       args:
         - PARENT_IMAGE=sawyer/ros-noetic-intera-moveit
     image: sawyer/sawyer-robot
+    depends_on:
+      - ros-noetic-intera-moveit

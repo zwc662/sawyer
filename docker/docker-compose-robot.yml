@@ -1,0 +1,9 @@
+version: '2.2'
+services:
+  sawyer-robot:
+    build:
+      context: ./docker/sawyer-robot
+      args:
+        - PARENT_IMAGE=zwc662/ros-noetic-intera-moveit:latest
+    image: sawyer/sawyer-robot
+  

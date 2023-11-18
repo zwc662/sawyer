@@ -15,9 +15,9 @@ ifneq (":", $(SAWYER_NET))
 	ADD_HOST=--add-host=$(SAWYER_NET)
 endif
 
-build-sawyer-robot: docker/docker-compose.yml docker/get_intera.sh
+build-sawyer-robot: docker/docker-compose-robot.yml docker/get_intera.sh
 	docker/get_intera.sh
-	sudo docker-compose -f docker/docker-compose.yml build
+	sudo docker-compose -f docker/docker-compose-robot.yml build
 
 run-sawyer-robot: build-sawyer-robot
 ifeq (,$(ADD_HOST))

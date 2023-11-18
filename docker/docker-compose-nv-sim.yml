@@ -1,0 +1,22 @@
+version: '2'
+services:
+  sawyer-nv-sim:
+    build:
+      context: ./docker/sawyer-sim
+      args:
+        - PARENT_IMAGE=zwc662/ros_noetic_sawyer:latest
+      image: sawyer/sawyer-nv-sim
+    #build:
+    #  context: /home/zwc662/Workspace/ros_noetic
+    #  dockerfile: Dockerfile
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]     
+    stdin_open: true
+    tty: true
+      
+

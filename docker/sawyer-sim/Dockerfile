@@ -5,18 +5,18 @@ FROM $PARENT_IMAGE
 # http://sdk.rethinkrobotics.com/intera/Gazebo_Tutorial
 RUN DEBIAN_FRONTEND=noninteractive apt update && apt -y install \
   gazebo7 \
-  ros-kinetic-qt-build \
-  ros-kinetic-gazebo-ros-control \
-  ros-kinetic-gazebo-ros-pkgs \
-  ros-kinetic-ros-control \
-  ros-kinetic-control-toolbox \
-  ros-kinetic-realtime-tools \
-  ros-kinetic-ros-controllers \
-  ros-kinetic-xacro \
+  ros-noetic-qt-build \
+  ros-noetic-gazebo-ros-control \
+  ros-noetic-gazebo-ros-pkgs \
+  ros-noetic-ros-control \
+  ros-noetic-control-toolbox \
+  ros-noetic-realtime-tools \
+  ros-noetic-ros-controllers \
+  ros-noetic-xacro \
   python-wstool \
-  ros-kinetic-tf-conversions \
-  ros-kinetic-kdl-parser \
-  ros-kinetic-sns-ik-lib
+  ros-noetic-tf-conversions \
+  ros-noetic-kdl-parser \
+  ros-noetic-sns-ik-lib
 
 # Install Sawyer Simulator.
 RUN ["/bin/bash", "-c", \
@@ -29,11 +29,11 @@ RUN ["/bin/bash", "-c", \
 
 # Build Source
 RUN ["/bin/bash", "-c", \
-  "source /opt/ros/kinetic/setup.bash && \
+  "source /opt/ros/noetic/setup.bash && \
   cd ~/ros_ws && \
   catkin_make"]
 
-# Copy the modified intera script configured for ros-kinetic
+# Copy the modified intera script configured for ros-noetic
 COPY intera.sh /root/ros_ws/intera.sh
 
 # Install and Build Sawyer Moveit Repo. Instructions obtained from:
@@ -45,7 +45,7 @@ RUN ["/bin/bash", "-c", \
   wstool merge https://raw.githubusercontent.com/RethinkRobotics/sawyer_moveit/becef615db853e156b8444bb343127d99d97fddc/sawyer_moveit.rosinstall && \
   wstool update && \
   cd ~/ros_ws/ && \
-  source /opt/ros/kinetic/setup.bash && \
+  source /opt/ros/noetic/setup.bash && \
   catkin_make"]
 
 # By default, joint_trajectory_action_server (JTS) waits 5.0 seconds 
@@ -55,7 +55,7 @@ RUN ["/bin/bash", "-c", \
 # does not start within 5 seconds. 
 # To get around this issue, we increase the timeout from 5.0 to 60.0.
 RUN ["/bin/bash", "-c", \
-  "source /opt/ros/kinetic/setup.bash && \
+  "source /opt/ros/noetic/setup.bash && \
   source ~/ros_ws/devel/setup.bash && \
   sed -i -e '/^ *rospy.wait_for_service/s/5.0/60.0/g' $(rospack find intera_interface)/src/intera_interface/limb.py"]
 

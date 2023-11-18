@@ -1,0 +1,33 @@
+version: '2.2'
+services:
+  ros-noetic-base:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.base
+    image: sawyer/ros-noetic-base
+  ros-noetic-intera:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.ros_intera
+      args:
+        - PARENT_IMAGE=sawyer/ros-noetic-base
+    image: sawyer/ros-noetic-intera
+    depends_on:
+      - ros-noetic-base
+  ros-noetic-intera-moveit:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.moveit
+      args:
+        - PARENT_IMAGE=sawyer/ros-noetic-intera
+    image: sawyer/ros-noetic-intera-moveit
+    depends_on:
+      - ros-noetic-intera
+  sawyer-robot:
+    build:
+      context: ./docker/sawyer-robot
+      args:
+        - PARENT_IMAGE=sawyer/ros-noetic-intera-moveit
+    image: sawyer/sawyer-robot
+    depends_on:
+      - ros-noetic-intera-moveit

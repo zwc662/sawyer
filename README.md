@@ -136,7 +136,9 @@ container for the Sawyer robot in the ROS environment without using an NVIDIA GP
 1. Entering the interactive mode of the container. Run `ifconfig | grep 192` to get your IP address. Open `~/ros_ws/intera.sh` and ensure `your_ip` is correct.
 
 2. Follow the steps in the [tutorial](https://support.rethinkrobotics.com/support/solutions/articles/80000980136)
-> **Attention:** If your workstation is not connected to robot with ethernet cable, the communication delay between the workstation and the robot will be much higher than that of connected. The delay may cause timeout during the execution of various programs. For instance, in many cases intera needs to reach out to get the state of the robot by executing line 72 in file `/root/ros_ws/src/intera_sdk/intera_interface/src/intera_interface/robot_enable.py` where you may have to modify the time limit from 10 to 50 to prevent the timeout exception to be raised.
+> **Attention:** If your workstation is not connected to robot with ethernet cable, the communication delay between the workstation and the robot will be much higher than that of connected. The delay may cause timeout during the execution of various programs. For instance, in many cases you may have to raise the time limit to prevent timeout error. Below is a curated list of locations where a timeout exception can be raised.
+* `/root/ros_ws/src/intera_sdk/intera_interface/src/intera_io/io_interface.py`, line 58
+* `/root/ros_ws/src/intera_sdk/intera_interface/src/intera_interface/robot_enable.py`, line 72
 
 3. Control the robot with keyboard by openning an interactive python prompt.
 ```

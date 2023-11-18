@@ -1,6 +1,8 @@
 ARG PARENT_IMAGE=ubuntu:16.04
 FROM $PARENT_IMAGE
 
+RUN ["sudo apt-get install -qy net-tools ping"]
+
 # Install Gazebo. Instructions obtained from:
 # http://sdk.rethinkrobotics.com/intera/Gazebo_Tutorial
 RUN DEBIAN_FRONTEND=noninteractive apt update && apt -y install \

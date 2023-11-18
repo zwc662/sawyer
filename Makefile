@@ -28,7 +28,11 @@ endif
 		--init \
 		--rm \
 		--name "sawyer-robot" \
-		-i
+		-it
+		-v /tmp/.X11-unix:/tmp/.X11-unix \
+		-e DISPLAY="${DISPLAY}" \
+		-e QT_X11_NO_MITSHM=1 \
+		--net="host" \
 		gym-sawyer/sawyer-robot
 
 build-sawyer-nv-robot: docker/docker-compose-nv-robot.yml docker/get_intera.sh

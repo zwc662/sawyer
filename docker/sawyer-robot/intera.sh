@@ -23,7 +23,7 @@ robot_hostname="021802CP00071.local"
 ROS_IP="192.168.0.103"
 # Set *Either* your computers ip address or hostname. Please note if using
 # your_hostname that this must be resolvable to the Robot.
-your_ip="192.168.0.102"
+your_ip="192.168.0.100"
 
 #your_hostname="my_computer.local"
 

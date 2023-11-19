@@ -38,7 +38,7 @@ Currently only NVIDIA GPUs are supported.
 
 4. To exit the container, type `sudo docker stop sawyer-sim` in a new terminal.
 
-##### Control Sim Sawyer
+#### Control Sim Sawyer
 
 1. Open a new terminal in the container by running:
   ```
@@ -120,7 +120,7 @@ container for the Sawyer robot in the ROS environment without using an NVIDIA GP
 
 4. To exit the container, type `sudo docker stop sawyer-robot` in a new terminal.
 
-##### Control Sawyer Robot
+#### Control Sawyer Robot
 
 1. Run `ifconfig | grep 192` on your workstation to identify your IP address. 
 2. Enter the interactive mode by `docker run -it --rm --net=='host' IMAGE_ID` in your container. Open `~/ros_ws/intera.sh` and ensure `your_ip` is the same as your workstation's IP address.

@@ -20,14 +20,15 @@ container for the simulated Sawyer in the ROS environment using an NVIDIA GPU.
 
 ##### Prerequisites
 
+- Host: Ubuntu 20.04
+  > **Note:** The container has to share the same IP address as the host so that the robot can locate the container. [Currently, IP sharing only works on linux host](https://docs.docker.com/network/drivers/host/). 
 - Install [Docker CE](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce)
 - Install [Docker Compose](https://docs.docker.com/compose/install/#install-compose)
 - Install the latest NVIDIA driver
 - Install nvidia-container-toolkit from the [link](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
 - Clone this repository in your local workspace
 
-Tested on Ubuntu 20.04
-
+ 
 ##### Instructions
 
 1. In the root folder of your cloned repository build the image by running:

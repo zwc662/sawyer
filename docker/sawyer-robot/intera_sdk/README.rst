@@ -1,6 +1,16 @@
 Intera SDK
 ==============
 
+Attention
+----------
+If your workstation is not connected to robot with ethernet cable, the communication delay between the workstation and the robot will be much higher than that of connected. 
+The delay may cause timeout during the execution of various programs. 
+Therefore, you may want to raise the time limit to prevent timeout error. 
+Below is a curated list of locations where a timeout exception can be raised.
+-----------
+| `/root/ros_ws/src/intera_sdk/intera_interface/src/intera_io/io_interface.py`, line 58
+| `/root/ros_ws/src/intera_sdk/intera_interface/src/intera_interface/robot_enable.py`, line 72
+
 The Intera SDK provides a platform for development of custom applications for Intera Robots.
 
 This repository contains metapackages and files for installation/use of the Intera SDK.

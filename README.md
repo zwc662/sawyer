@@ -134,17 +134,14 @@ container for the Sawyer robot in the ROS environment without using an NVIDIA GP
 
 
 1. Run `ifconfig | grep 192` on your workstation to identify your IP address. 
-2. Enter the interactive mode in your container. Open `~/ros_ws/intera.sh` and ensure `your_ip` is the same as your workstation's IP address.
+2. Enter the interactive mode by `docker run -it -rm --net='host' IMAGE_ID` in your container. Open `~/ros_ws/intera.sh` and ensure `your_ip` is the same as your workstation's IP address.
 3. Move to root of our catkin workspace `$ cd ~/ros_ws && source /opt/ros/noetic/setup.bash && catkin_make `
 4. Identify robot hostname via Identify the robot hostname via `$ env | grep ROS_MASTER_URI` and verify connection by `$ ping robot_hostname.local`.
 5. View the available rostopics: `rostopic list`
 6. Ensure that our workspace is still configured correctly by `$ cd ~/ros_ws && ./intera.sh && source devel/setup.bash`
 7. Verify if one way communication (robot -> computer) works `rostopic echo /rosout -n 1`
-8. **Attention:** If your workstation is not connected to robot with ethernet cable, the communication delay between the workstation and the robot will be much higher than that of connected. The delay may cause timeout during the execution of various programs. For instance, in many cases you may have to raise the time limit to prevent timeout error. Below is a curated list of locations where a timeout exception can be raised.
-* `/root/ros_ws/src/intera_sdk/intera_interface/src/intera_io/io_interface.py`, line 58
-* `/root/ros_ws/src/intera_sdk/intera_interface/src/intera_interface/robot_enable.py`, line 72
-9. Check if one way communication (computer -> robot) working by blinking the head lamp light blink via `rosrun intera_examples lights_blink.py`
-10. Enable the robot `rosrun intera_interface enable_robot.py -e`
+8. Check if one way communication (computer -> robot) working by blinking the head lamp light blink via `rosrun intera_examples lights_blink.py`
+9. Enable the robot `rosrun intera_interface enable_robot.py -e`
 
 #### Example: control the robot with keyboard by openning an interactive python prompt.
 ```

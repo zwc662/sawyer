@@ -1,7 +1,7 @@
 ARG PARENT_IMAGE=ubuntu:20.04
 FROM $PARENT_IMAGE
 
-RUN ["sudo apt-get -qy install net-tools"]
+RUN sudo apt-get -qy install net-tools
 
 # Build Source
 RUN ["/bin/bash", "-c", \

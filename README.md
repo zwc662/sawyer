@@ -134,7 +134,7 @@ container for the Sawyer robot in the ROS environment without using an NVIDIA GP
 
 
 1. Run `ifconfig | grep 192` on your workstation to identify your IP address. 
-2. Enter the interactive mode by `docker run -it -rm --net='host' IMAGE_ID` in your container. Open `~/ros_ws/intera.sh` and ensure `your_ip` is the same as your workstation's IP address.
+2. Enter the interactive mode by `docker run -it --rm --net=='host' IMAGE_ID` in your container. Open `~/ros_ws/intera.sh` and ensure `your_ip` is the same as your workstation's IP address.
 3. Move to root of our catkin workspace `$ cd ~/ros_ws && source /opt/ros/noetic/setup.bash && catkin_make `
 4. Identify robot hostname via Identify the robot hostname via `$ env | grep ROS_MASTER_URI` and verify connection by `$ ping robot_hostname.local`.
 5. View the available rostopics: `rostopic list`

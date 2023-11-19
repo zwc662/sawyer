@@ -5,39 +5,34 @@ or a simulated one with Gazebo.
 
 This repository is under development, so all code is still experimental.
 
-## Docker containers
 
-### Sawyer Simulation
-
-We use Gazebo to simulate Sawyer, so a dedicated GPU is **required**
-([see System Requirements](http://gazebosim.org/tutorials?tut=guided_b1&cat=)).
-Currently only NVIDIA GPUs are supported.
-
-#### NVIDIA GPU
-
-This section contains instructions to build the docker image and run the docker
-container for the simulated Sawyer in the ROS environment using an NVIDIA GPU.
-
-##### Prerequisites
+## Prerequisites
 
 - Host: Ubuntu 20.04
   > **Note:** The container has to share the same IP address as the host so that the robot can locate the container. [Currently, IP sharing only works on linux host](https://docs.docker.com/network/drivers/host/). 
 - Install [Docker CE](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce)
 - Install [Docker Compose](https://docs.docker.com/compose/install/#install-compose)
-- Install the latest NVIDIA driver
-- Install nvidia-container-toolkit from the [link](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
+- (Optional) Install nvidia-container-toolkit from the [link](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
 - Clone this repository in your local workspace
 
- 
+
+## Docker containers
+
+### Sawyer Simulation 
+If you do not need simulation, skip to [Sawyer Robot](#robot) section.
+We use Gazebo to simulate Sawyer, so a dedicated GPU is **required**
+([see System Requirements](http://gazebosim.org/tutorials?tut=guided_b1&cat=)).
+Currently only NVIDIA GPUs are supported.
+
 ##### Instructions
 
 1. In the root folder of your cloned repository build the image by running:
   ```
-  $ make build-sawyer-nv-robot
+  $ make build-sawyer-nv-sim
   ```
 2. After the image is built, run the container:
   ```
-  $ make run-sawyer-nv-robot
+  $ make run-sawyer-nv-sim
   ```
 3. Gazebo and MoveIt! should open with Sawyer in them
 
@@ -74,17 +69,15 @@ container for the simulated Sawyer in the ROS environment using an NVIDIA GPU.
   rosrun image_view image_view image:=/io/internal_camera/head_camera/image_raw
   ```
   
- ### Sawyer Robot  
-A dedicated GPU is recommended for rviz and other visualization tools. Currently only NVIDIA GPUs are supported.
+### <a name='robot'>Sawyer Robot</a>
 
 #### NVIDIA GPU
+If the host does not have NIVIDA GPU, skip to [No NVIDIA GPU](#cpu) section.
+A dedicated GPU is recommended for rviz and other visualization tools. 
+Currently only NVIDIA GPUs are supported.
 
 This section contains instructions to build the docker image and run the docker
 container for the Sawyer robot in the ROS environment using an NVIDIA GPU.
-
-##### Prerequisites
-
-- Same as sawyer simulation.
 
 ##### Instructions
 
@@ -106,14 +99,10 @@ container for the Sawyer robot in the ROS environment using an NVIDIA GPU.
 
 4. To exit the container, type `sudo docker stop sawyer-robot` in a new terminal.
 
-#### No NVIDIA GPU
+#### <a name="cpu">No NVIDIA GPU</a> 
 
 This section contains instructions to build the docker image and run the docker
 container for the Sawyer robot in the ROS environment without using an NVIDIA GPU.
-
-##### Prerequisites
-
-- Same as sawyer simulation.
 
 ##### Instructions
 
@@ -131,8 +120,7 @@ container for the Sawyer robot in the ROS environment without using an NVIDIA GP
 
 4. To exit the container, type `sudo docker stop sawyer-robot` in a new terminal.
 
-### ROS-Intera 
-
+##### Control Sawyer Robot
 
 1. Run `ifconfig | grep 192` on your workstation to identify your IP address. 
 2. Enter the interactive mode by `docker run -it --rm --net=='host' IMAGE_ID` in your container. Open `~/ros_ws/intera.sh` and ensure `your_ip` is the same as your workstation's IP address.

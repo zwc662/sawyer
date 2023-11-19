@@ -23,7 +23,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt update && apt -y install \
 # Install Sawyer Simulator.
 RUN ["/bin/bash", "-c", \
   "cd ~/ros_ws/src && \
-  git clone https://github.com/RethinkRobotics/sawyer_simulator.git && \
+  git clone https://github.com/zwc662/sawyer.git && \	
+  mv sawyer/sawyer_simulator ./sawyer_simulator && \
   cd ~/ros_ws/src && \
   wstool init . && \
   wstool merge sawyer_simulator/sawyer_simulator.rosinstall && \

@@ -20,8 +20,9 @@ RUN ["/bin/bash", "-c", \
   ./intera.sh && \
   cd ~/ros_ws/src && \
   wstool init . && \
-  git clone https://github.com/RethinkRobotics/sawyer_robot.git && \	
-  wstool merge sawyer_robot/sawyer_robot.rosinstall && \
+  git clone https://github.com/zwc662/sawyer.git && \	
+  mv sawyer/sawyer_robot ./sawyer_robot && \
+  wstool merge sawyer/sawyer_robot/sawyer_robot.rosinstall && \
   wstool update && \
   cd ~/ros_ws/ && \
   source /opt/ros/noetic/setup.bash && \

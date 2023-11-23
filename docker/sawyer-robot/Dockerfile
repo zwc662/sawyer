@@ -12,9 +12,9 @@ RUN ["/bin/bash", "-c", \
 # Copy the modified intera script configured for ros-noetic
 COPY intera.sh /root/ros_ws/intera.sh
 
-COPY intera_sdk /root/ros_ws/src/intera_sdk
+#COPY intera_sdk /root/ros_ws/src/intera_sdk
 
-COPY sawyer_robot.rosinstall /root/ros_ws/src/sawyer_robot.rosinstall
+#COPY sawyer_robot.rosinstall /root/ros_ws/src/sawyer_robot.rosinstall
 
 # Install and Build Sawyer Moveit Repo. Instructions obtained from:
 # http://sdk.rethinkrobotics.com/intera/MoveIt_Tutorial

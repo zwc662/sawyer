@@ -25,7 +25,7 @@ RUN ["/bin/bash", "-c", \
   cd ~/ros_ws/src && \
   wstool init . && \
   git clone https://github.com/RethinkRobotics/sawyer_robot.git && \	
-  wstool merge sawyer_robot.rosinstall && \
+  wstool merge && \
   wstool update && \
   cd ~/ros_ws/ && \
   source /opt/ros/noetic/setup.bash && \

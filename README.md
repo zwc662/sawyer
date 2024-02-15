@@ -124,13 +124,13 @@ container for the Sawyer robot in the ROS environment without using an NVIDIA GP
 
 1. Run `ifconfig | grep 192` on your workstation to identify your IP address. 
 2. **If docker supports sharing IP with host (such as Linux host)**, enter the interactive mode by `docker run -it --rm --net=='host' IMAGE_ID` in your container. **If docker does not support sharing IP with host (such as MacOS and Win hosts)**, expose ports when running the container `docker run -it --rm -p 45100:45100 -p 45101:45101 IMAGE_ID`.
-3. Open `~/ros_ws/intera.sh` and ensure `your_ip` is the same as your host's IP address
-5. Move to root of our catkin workspace `$ cd ~/ros_ws && source /opt/ros/noetic/setup.bash && catkin_make `
-6. Identify robot hostname via Identify the robot hostname via `$ env | grep ROS_MASTER_URI` and verify connection by `$ ping $(robot_hostname).local`.
-7. View the available rostopics: `rostopic list`
-8. Ensure that our workspace is still configured correctly by `$ cd ~/ros_ws && ./intera.sh && source devel/setup.bash`
+3. Open `~/ros_ws/intera.sh`. Ensure `your_ip` is the same as your host's IP address and 'robot_ip' is the same as your robot's IP address. Verify connection by `$ ping $(robot_ip).local`.
+5. Redirect to root of our catkin workspace `$ cd ~/ros_ws && source /opt/ros/noetic/setup.bash && catkin_make `
+6. Then configure your workstation by `$ cd ~/ros_ws && ./intera.sh && source devel/setup.bash`
+7. Identify robot hostname via Identify the robot hostname via `$ env | grep ROS_MASTER_URI` and 
+8. View the available rostopics: `rostopic list`
 9. Verify if one way communication (robot -> computer) works `rostopic echo /rosout -n 1`
-10. Check if one way communication (computer -> robot) working by blinking the head lamp light blink via `rosrun intera_examples lights_blink.py`. **If docker does not support sharing IP with host (such as MacOS and Win hosts)**, initialize `rospy` with `rospy.init_node(node_name,xmlrpc_port=45100, tcpros_port=45101)`.
+10. Check if one way communication (computer -> robot) working by blinking the head lamp light blink via `rosrun intera_examples lights_blink.py`. **If docker does not support sharing IP with host (such as MacOS and Win hosts)**, locate your python file, e.g., `lights_blink.py` and initialize `rospy.init_node(...)` with `rospy.init_node(node_name,xmlrpc_port=45100, tcpros_port=45101)`.
 11. Enable the robot `rosrun intera_interface enable_robot.py -e`
 
 #### Example: control the robot with keyboard by openning an interactive python prompt.
